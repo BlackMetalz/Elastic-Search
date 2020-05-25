@@ -145,7 +145,9 @@ Feel free to change the "ES_JAVA_OPTS" variable in order to assign RAM memory to
 
 Ones your file is ready we can go on and deploy the cluster usign:
 
+```
 docker stack deploy --compose-file docker-compose.yml opendistrostack
+```
 
 GREAT !! Your first opendistro cluster should be running right now and you should be able to access it using the internal ip of the Instance1 on the port 5601. For example: http://127.0.0.1:5601
 
@@ -164,8 +166,14 @@ Caveats:
 In order to make the swarm fault tolerance the best way i found was promoting all nodes to leaders of the swarm and chaning from the docker-compose the constraints to labels. More info here.
 The elastic cluster should be able to survive the lost of the Instance1 and i ll automatically assign another master but you ll lose your kibana. Im looking on deploying this on a more efficient way.
 At some point the elastic cluster need to have more than one master and for this you ll need to run:
+
+```
 PUT /_cluster/settings {"persistent" : {"discovery.zen.minimum_master_nodes" : 2}}
-and preferably add every master to the discovery.zen.ping.unicast.hosts variable. Updating the docker-compose file and runnig the update over the cluster.
+```
+
+and preferably add every master to the discovery.zen.ping.unicast.hosts variable. Updating the docker-compose file and running the update over the cluster.
+
+
 Extras:
 
 If you have problems creating the S3 repository for backups this request might help update the keystore values we setup on the Dockerfile:
