@@ -1,4 +1,4 @@
-#Credit: https://github.com/opendistro-for-elasticsearch/community/issues/28#issuecomment-482866142
+### Credit: https://github.com/opendistro-for-elasticsearch/community/issues/28#issuecomment-482866142
 Here i what i was able to come up with. Feel free to change it up and fix grammatical mistakes (english is my second language)
 
 When going for a complete production envirioment being able to scale up and restore backups to our implementations is key in order to have a reliable envirioment where people can store and explore real time data.
