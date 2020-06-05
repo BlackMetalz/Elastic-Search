@@ -25,14 +25,20 @@ will create a new replica shard and copy the data over.
 
 At the end of the day, we end up with something like this:
 
+![cluster-node-index-shard](images/shard-node-index.png "Elasticsearch")
 
+2. A more in-depth look at Elasticsearch
+Quorum: Nodes vote on who should lead them, the master. The master runs a lot of cluster-management processes and has the last say in many matters
 
+Master-eligible are all nodes that have this in their configuration:
+```
+node.master: true
+```
 
+On cluster start or when the master leaves the cluster, all master-eligible nodes start an election for the new master. For this to work, you need to have 2n+1 master-eligible nodes.with two nodes receiving 50% of the votes. This is a split brain scenario and will lead to the loss of all data in one of the two partitions. So don’t have this happen. You need 2n+1 master-eligible nodes.
 
-
-
-
-
+How nodes join the cluster: 
+Seed Hosts
 
 
 
