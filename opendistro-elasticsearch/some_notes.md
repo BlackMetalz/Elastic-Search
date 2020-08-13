@@ -10,7 +10,7 @@ For 9200. It depends if you want to send REST requests to that node.
 connect to the other nodes.
 ```
 
-- Multi Cluster config:
+- Multi Cluster config: ( Credit: https://discuss.opendistrocommunity.dev/t/multi-node-cluster/963 )
 First thing you have to know that two node elasticsearch cluster is not a good idea if you want to cover one node failure scenario. In this case you would have to configure:
 ```
 minimum_master_nodes:1
