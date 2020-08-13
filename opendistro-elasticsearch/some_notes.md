@@ -9,3 +9,20 @@ For 9200. It depends if you want to send REST requests to that node.
 9200 is the HTTP port. The Java transport client needs to use port 9300 to
 connect to the other nodes.
 ```
+
+- Multi Cluster config:
+First thing you have to know that two node elasticsearch cluster is not a good idea if you want to cover one node failure scenario. In this case you would have to configure:
+```
+minimum_master_nodes:1
+```
+and basically if you will have connection interruption between your 2 es nodes you will have split brain problem
+
+With only 2 nodes you should configure
+minimum_master_nodes:2
+but then if one node will go down whole cluster will change it state to RED
+
+So basically minimum multinode cluster should have 3 nodes with:
+minimum_master_nodes:2
+then one node can goes down.
+
+
