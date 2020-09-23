@@ -61,3 +61,8 @@ GET /_nodes/stats/indices/request_cache?human
 PUT /my-index-000001/_settings
 { "index.requests.cache.enable": true }
 ```
+
+-- Cluster setting with default
+```
+GET _cluster/settings?include_defaults=true
+```
