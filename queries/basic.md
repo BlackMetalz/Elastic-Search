@@ -43,3 +43,15 @@ GET /_nodes/<metric>
 
 GET /_nodes/<node_id>/<metric>
 ````
+
+-- Get Cluster API
+
+```
+-- GEt cluster stats
+GET /_cluster/stats
+```
+
+-- Get indices cache request stats
+```
+GET /_nodes/stats/indices/request_cache?human
+```
