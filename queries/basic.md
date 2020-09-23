@@ -32,3 +32,14 @@ GET /security-auditlog-2020.09.21/_search
 ```
 DELETE /security-auditlog-2020.08*
 ```
+
+-- Node Info API
+```
+GET /_nodes
+
+GET /_nodes/<node_id>
+
+GET /_nodes/<metric>
+
+GET /_nodes/<node_id>/<metric>
+````
