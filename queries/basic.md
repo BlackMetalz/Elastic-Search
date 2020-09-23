@@ -55,3 +55,9 @@ GET /_cluster/stats
 ```
 GET /_nodes/stats/indices/request_cache?human
 ```
+
+-- Enable cache for index
+```
+PUT /my-index-000001/_settings
+{ "index.requests.cache.enable": true }
+```
