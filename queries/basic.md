@@ -42,6 +42,9 @@ GET /_nodes/<node_id>
 GET /_nodes/<metric>
 
 GET /_nodes/<node_id>/<metric>
+
+-- indices stats
+GET /_nodes/stats/indices/search
 ````
 
 -- Get Cluster API
