@@ -25,6 +25,16 @@ GET /_snapshot/_all
 ```
 PUT _snapshot/backup/snapshot_20201006?wait_for_completion=true&pretty
 ```
+Advance: Remove some index and include some index when create snapshot
+```
+PUT _snapshot/backup/notify-cmt_snapshot_4?wait_for_completion=true&pretty
+{
+  "indices": "-security-auditlog*,-.opendistro*,-.kibana*,lala*,fafa*,live*",
+  "ignore_unavailable": true,
+  "include_global_state": false
+}
+```
+
 - Check status: 
 ```
 GET _snapshot/_status
