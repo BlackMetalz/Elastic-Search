@@ -58,3 +58,8 @@ POST _snapshot/backup/snapshot_20201006/_restore
   "include_global_state": false
 }
 ```
+
+6. Delete snapshot:
+```
+DELETE /_snapshot/my_repository/my_snapshot
+```
