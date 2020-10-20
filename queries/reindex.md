@@ -28,3 +28,9 @@ epoch      timestamp count
 ```
 
 So 120000 documents in total.
+
+
+-- Reindex from remote cluster:
+```
+https://www.elastic.co/guide/en/elasticsearch/reference/current/reindex-upgrade-remote.html
+```
