@@ -34,3 +34,28 @@ So 120000 documents in total.
 ```
 https://www.elastic.co/guide/en/elasticsearch/reference/current/reindex-upgrade-remote.html
 ```
+
+
+-- Reindex from remote cluster
+```
+POST _reindex
+{
+  "source": {
+    "remote": {
+      "host": "http://oldhost:9200",
+      "username": "user",
+      "password": "pass"
+    },
+    "index": "index_name"
+  },
+  "dest": {
+    "index": "index_name"
+  }
+}
+```
+Don't forget to add: 
+```
+reindex.remote.whitelist : oldhost:9200
+```
+
+into elasticsearch.yml ( master node only and restart )
