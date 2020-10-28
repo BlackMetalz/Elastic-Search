@@ -9,7 +9,9 @@ GET _count
 ```
 
 -- Count total indices
-
+```
+GET _cluster/stats?filter_path=indices.count
+```
 
 
 -- Unassigned Shard check:
