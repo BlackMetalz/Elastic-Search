@@ -5,7 +5,7 @@ GET _cluster/stats?filter_path=indices.shards.total
 
 -- Count Total Documents
 ```
-GET _count
+GET _cluster/stats?filter_path=indices.docs.count
 ```
 
 -- Count total indices
