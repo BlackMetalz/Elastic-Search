@@ -1,3 +1,8 @@
+-- Count total shards of cluster
+```
+GET _cluster/stats?filter_path=indices.shards.total
+```
+
 -- Unassigned Shard check:
 ```
 GET /_cluster/allocation/explain?pretty
