@@ -3,6 +3,15 @@
 GET _cluster/stats?filter_path=indices.shards.total
 ```
 
+-- Count Total Documents
+```
+GET _count
+```
+
+-- Count total indices
+
+
+
 -- Unassigned Shard check:
 ```
 GET /_cluster/allocation/explain?pretty
