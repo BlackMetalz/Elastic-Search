@@ -1,4 +1,4 @@
-# note: update roles and update role mapping equal to create. So you just need re-run create role/mapping query with new data 
+# note: update roles and update role mapping equal to create. So you just need re-run create role/mapping query with new data. Run security will flush those users >.>
 
 # 1. Create user
 ```
