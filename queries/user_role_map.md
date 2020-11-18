@@ -1,11 +1,16 @@
+# note: update roles and update role mapping equal to create. So you just need re-run create role/mapping query with new data 
+
 # 1. Create user
+```
 PUT _opendistro/_security/api/internalusers/wtf_user
 {
   "password": "wtfpassword",
   "backend_roles": ["wtf_user"]
 }
+```
 
 # 2. Create Roles with permission
+```
 PUT _opendistro/_security/api/roles/wtf_user
 {
   "cluster_permissions": [
@@ -25,11 +30,14 @@ PUT _opendistro/_security/api/roles/wtf_user
     ]
   }]
 }
+```
 
 # 3. Map role to user
+```
 PUT _opendistro/_security/api/rolesmapping/wtf_user
 {
   "backend_roles" : [ "wtf_user" ],
   "hosts" : [ "*" ],
   "users" : [ "wtf_user" ]
 }
+```
