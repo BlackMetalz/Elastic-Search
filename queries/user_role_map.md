@@ -1,4 +1,5 @@
 # note: update roles and update role mapping equal to create. So you just need re-run create role/mapping query with new data. Run security will flush those users >.>
+# Permissions: https://opendistro.github.io/for-elasticsearch-docs/docs/security/access-control/permissions/
 
 # 1. Create user
 ```
