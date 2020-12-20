@@ -59,3 +59,19 @@ reindex.remote.whitelist : oldhost:9200
 ```
 
 into elasticsearch.yml ( master node only and restart )
+
+
+- CURL command for large data
+```
+curl -XPOST \
+    http://127.0.0.1:9200/_reindex \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "source": {
+        "index": "wtf"
+    },
+    "dest": {
+        "index": "wtf_new"
+    }
+}' -u admin:adminwtf -k
+```
