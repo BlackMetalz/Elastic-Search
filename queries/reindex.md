@@ -75,3 +75,17 @@ curl -XPOST \
     }
 }' -u admin:adminwtf -k
 ```
+
+Multiple reindex
+```
+for index in i1 i2 i3 i4 i5; do
+  curl -HContent-Type:application/json -XPOST localhost:9200/_reindex?pretty -d'{
+    "source": {
+      "index": "'$index'"
+    },
+    "dest": {
+      "index": "'$index'-reindexed"
+    }
+  }'
+done
+```
