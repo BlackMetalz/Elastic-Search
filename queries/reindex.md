@@ -1,5 +1,5 @@
 -- Source: https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-reindex.html
-
+-- Good read: https://developers.soundcloud.com/blog/how-to-reindex-1-billion-documents-in-1-hour-at-soundcloud
 -- Reindex: Copies documents from a source to a destination.
 index: wtf_1 have 20k documents
 index: test_data have 100k documents
