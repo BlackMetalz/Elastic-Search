@@ -59,6 +59,21 @@ POST _snapshot/backup/snapshot_20201006/_restore
 }
 ```
 
+5.1 Restore with different index name
+```
+POST yolo2/_close
+
+POST _snapshot/backup/snapshot_20201221/_restore?wait_for_completion=false
+{
+  "indices": "wtf_200k_larger_shard",
+  "ignore_unavailable": true,
+  "include_global_state": false,        
+  "include_aliases": false,
+  "rename_pattern": "wtf_200k_larger_shard", 
+  "rename_replacement": "yolo2"
+}
+```
+
 6. Delete snapshot:
 ```
 DELETE /_snapshot/my_repository/my_snapshot
