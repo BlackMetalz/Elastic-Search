@@ -94,14 +94,32 @@ for index in i1 i2 i3 i4 i5; do
 done
 ```
 
-Reindex with auto slice:
+-- Reindex with auto slice:
 https://discuss.elastic.co/t/slow-reindex-operation-on-heavy-index/198320/3
 From author:
 ```
-This is the solution. Thanks! It helped indeed. I also merged the source index in a single segment as I don't expect any further writes to it anytime soon. 
+This is the solution. Thanks! It helped indeed. I also merged the source index in a single segment as 
+I don't expect any further writes to it anytime soon. 
 Also disabled all type of shard allocation throughout the cluster and now my reindex is avg ~15,000 docs/sec 
 which is the best historical indexing rate I've ever had in this cluster :slight_smile:
 ```
+- Note  for slices number:
+```
+Picking the number of slices
+If slicing automatically, setting slices to auto will choose a reasonable number for most indices. If slicing manually or 
+otherwise tuning automatic slicing, use these guidelines.
+
+Query performance is most efficient when the number of slices is equal to the number of shards in the index. If that number is large (e.g. 500),
+choose a lower number as too many slices will hurt performance. Setting slices higher than the number of shards generally does not 
+improve efficiency and adds overhead.
+
+Indexing performance scales linearly across available resources with the number of slices.
+
+Whether query or indexing performance dominates the runtime depends on the documents being reindexed and cluster resources.
+```
+
+So number of slice should be equal to number of shard ( primary and replica )
+
 
 ```
 POST _reindex?wait_for_completion=false&slices=20&refresh
