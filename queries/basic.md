@@ -3,6 +3,11 @@
 GET _cluster/stats?filter_path=indices.shards.total
 ```
 
+-- Check active recovery status
+```
+curl -XGET "localhost:9200/_recovery?pretty&active_only"
+```
+
 -- Count Total Documents
 ```
 GET _cluster/stats?filter_path=indices.docs.count
