@@ -140,3 +140,9 @@ POST _reindex?wait_for_completion=false&slices=20&refresh
   }
 }
 ```
+
+-- Get reindex status and cancel the reindex
+```
+GET _tasks?detailed=true&actions=*reindex
+POST _tasks/_cancel?nodes=node_id_go_here&actions=*reindex
+```
