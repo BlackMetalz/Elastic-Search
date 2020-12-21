@@ -60,6 +60,7 @@ POST _snapshot/backup/snapshot_20201006/_restore
 ```
 
 5.1 Restore with different index name
+Note: cannot restore index [yolo77] with [4] shards from a snapshot of index [wtf_200k_larger_shard] with [2] shards
 ```
 POST yolo2/_close
 
