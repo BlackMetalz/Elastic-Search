@@ -93,3 +93,32 @@ for index in i1 i2 i3 i4 i5; do
   }'
 done
 ```
+
+Reindex with auto slice:
+https://discuss.elastic.co/t/slow-reindex-operation-on-heavy-index/198320/3
+From author:
+```
+This is the solution. Thanks! It helped indeed. I also merged the source index in a single segment as I don't expect any further writes to it anytime soon. 
+Also disabled all type of shard allocation throughout the cluster and now my reindex is avg ~15,000 docs/sec 
+which is the best historical indexing rate I've ever had in this cluster :slight_smile:
+```
+
+```
+POST _reindex?wait_for_completion=false&slices=20&refresh
+{
+  "source": {
+    "index": "puma.compilation.pipeline.96f19f5b-bc84-4d4b-8694-b80a293e78e4-latest",
+    "size": 500,
+    "query": {
+"range": {
+      "ibi_logtime": {
+        "gte": "now-9M/M"
+      }
+    }
+    }
+  },
+  "dest": {
+    "index": "puma.compilation.pipeline.96f19f5b-bc84-4d4b-8694-b80a293e78e4-optimized"
+  }
+}
+```
