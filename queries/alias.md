@@ -11,8 +11,8 @@ POST _aliases
   "actions": [
     {
       "add": {
-        "index": "new_index",
-        "alias": "original_index"
+        "index": "your_index",
+        "alias": "your_alias"
       }
     }
   ]
