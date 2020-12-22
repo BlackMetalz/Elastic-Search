@@ -18,3 +18,13 @@ POST _aliases
   ]
 }
 ```
+
+-- Remove Alias:
+```
+POST /_aliases
+{
+  "actions" : [
+    { "remove" : { "index" : "test1", "alias" : "alias1" } }
+  ]
+}
+```
