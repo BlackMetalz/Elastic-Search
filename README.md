@@ -40,37 +40,9 @@ On cluster start or when the master leaves the cluster, all master-eligible node
 How nodes join the cluster: 
 Seed Hosts
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Credit: https://facinating.tech/2020/02/22/in-depth-guide-to-running-elasticsearch-in-production/
 
-
-
-
+- Good read for optimize : https://octoperf.com/blog/2018/09/21/optimizing-elasticsearch/
 
 
 
