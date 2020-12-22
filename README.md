@@ -43,8 +43,8 @@ Seed Hosts
 ### Credit: https://facinating.tech/2020/02/22/in-depth-guide-to-running-elasticsearch-in-production/
 
 - Good read for optimize : https://octoperf.com/blog/2018/09/21/optimizing-elasticsearch/
-
-
+1. Number of Replicas is a trade-off between indexing speed and data durability.
+2. Leave Ram more ram -> more performance for ES ( used by filesystem cache )
 
 
 
