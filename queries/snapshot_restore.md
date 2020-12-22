@@ -74,7 +74,15 @@ POST _snapshot/backup/snapshot_20201221/_restore?wait_for_completion=false
   "rename_replacement": "yolo2"
 }
 ```
-
+5.2 Single index restore:
+```
+POST /_snapshot/backup/snapshot_20201222-040001/_restore
+{
+  "indices": "indexname",
+  "ignore_unavailable": true,
+  "include_global_state": false
+}
+```
 6. Delete snapshot:
 ```
 DELETE /_snapshot/my_repository/my_snapshot
