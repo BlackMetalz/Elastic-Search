@@ -45,6 +45,7 @@ Seed Hosts
 - Good read for optimize : https://octoperf.com/blog/2018/09/21/optimizing-elasticsearch/
 1. Number of Replicas is a trade-off between indexing speed and data durability.
 2. Leave Ram more ram -> more performance for ES ( used by filesystem cache )
-
+- If mostly used read,write -> leave more ram for filesystem cache
+- If mostly used for AAG query -> 40-50% Ram ( no more 32G )
 
 
