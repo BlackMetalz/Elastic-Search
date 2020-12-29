@@ -8,12 +8,7 @@ PUT wtf_index_name
     "index" : 
     {
       "number_of_shards": 5
-      "number_of_replicas" : 1,
-      "refresh_interval" : "60s"
-    },
-    "translog": 
-    {
-      "flush_threshold_size": "2gb"
+      "number_of_replicas" : 1
     }
   }
 }
