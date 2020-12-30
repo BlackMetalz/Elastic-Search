@@ -40,7 +40,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/reindex-upgrade-
 ```
 
 
--- Reindex from remote cluster
+-- Reindex from remote cluster. I used this for reindex from ES 5 to ES 7 or ES 7 to ES 7
 ```
 POST _reindex
 {
@@ -94,7 +94,7 @@ for index in i1 i2 i3 i4 i5; do
 done
 ```
 
--- Reindex with auto slice:
+-- Reindex with auto slice: This doesn't work with reindex from remote
 https://discuss.elastic.co/t/slow-reindex-operation-on-heavy-index/198320/3
 From author:
 ```
