@@ -3,20 +3,23 @@
 
 # 1. Create user
 ```
-PUT _opendistro/_security/api/internalusers/wtf_user
+PUT _opendistro/_security/api/internalusers/username
 {
   "password": "wtfpassword",
-  "backend_roles": ["wtf_user"]
+  "backend_roles": ["userrole"]
 }
 ```
 
 # 2. Create Roles with permission
+This example is full access to index pattern defined.
 ```
-PUT _opendistro/_security/api/roles/wtf_user
+PUT _opendistro/_security/api/roles/userrole
 {
   "cluster_permissions": [
     "cluster_composite_ops",
-    "indices_monitor"
+    "cluster:monitor/main",
+    "cluster:monitor/health",
+    "cluster:monitor/state"
   ],
   "index_permissions": [{
     "index_patterns": [
@@ -26,8 +29,7 @@ PUT _opendistro/_security/api/roles/wtf_user
     "fls": [],
     "masked_fields": [],
     "allowed_actions": [
-      "indices:admin/get",
-      "indices:data/read/search"
+       "indices_all"
     ]
   }]
 }
@@ -35,10 +37,10 @@ PUT _opendistro/_security/api/roles/wtf_user
 
 # 3. Map role to user
 ```
-PUT _opendistro/_security/api/rolesmapping/wtf_user
+PUT _opendistro/_security/api/rolesmapping/userrole
 {
-  "backend_roles" : [ "wtf_user" ],
+  "backend_roles" : [ "userrole" ],
   "hosts" : [ "*" ],
-  "users" : [ "wtf_user" ]
+  "users" : [ "username" ]
 }
 ```
