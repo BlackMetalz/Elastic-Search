@@ -1,0 +1,2 @@
+-- Close Index
+POST /my-index-000001/_close
