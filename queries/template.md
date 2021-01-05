@@ -13,13 +13,13 @@ UT _index_template/k8s_logs
 }
 ```
 
--- Hmmm
+-- Create basic template with setting. Remember the index pattern: I don't know why k9s_log_test* doesn't work but k9s_logs_test_* work
 ```
 PUT _template/k9s_logs_test
 {
     "order" : 0,
     "index_patterns" : [
-      "k9s_logs_test*"
+      "k9s_logs_test_*"
     ],
     "settings" : {
       "index" : {
@@ -43,4 +43,9 @@ PUT _template/k9s_logs_test
     },
     "aliases" : { }
 }
+```
+
+-- Delete Template:
+```
+DELETE _template/template_name
 ```
