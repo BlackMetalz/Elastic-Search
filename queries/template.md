@@ -49,3 +49,16 @@ PUT _template/k9s_logs_test
 ```
 DELETE _template/template_name
 ```
+
+-- Setup template default
+```
+PUT _template/default
+{
+  "index_patterns": ["*"],
+  "order": -1,
+  "settings": {
+    "number_of_shards": "5",
+    "number_of_replicas": "1"
+  }
+}
+```
