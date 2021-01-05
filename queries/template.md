@@ -12,3 +12,35 @@ UT _index_template/k8s_logs
   }
 }
 ```
+
+-- Hmmm
+```
+PUT _template/k9s_logs_test
+{
+    "order" : 0,
+    "index_patterns" : [
+      "k9s_logs_test*"
+    ],
+    "settings" : {
+      "index" : {
+        "number_of_shards" : "5",
+        "number_of_replicas" : "1"
+      }
+    },
+    "mappings" : {
+      "_source" : {
+        "enabled" : false
+      },
+      "properties" : {
+        "created_at" : {
+          "format" : "EEE MMM dd HH:mm:ss Z yyyy",
+          "type" : "date"
+        },
+        "host_name" : {
+          "type" : "keyword"
+        }
+      }
+    },
+    "aliases" : { }
+}
+```
