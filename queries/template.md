@@ -62,3 +62,16 @@ PUT _template/default
   }
 }
 ```
+
+-- Another example: 
+```
+PUT _template/security-auditlog
+{
+  "index_patterns": ["security-auditlog*"],
+  "order": -1,
+  "settings": {
+    "number_of_shards": "1",
+    "number_of_replicas": "1"
+  }
+}
+```
