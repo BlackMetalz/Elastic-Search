@@ -13,7 +13,7 @@ UT _index_template/k8s_logs
 }
 ```
 
--- Create basic template with setting. Remember the index pattern: I don't know why k9s_log_test* doesn't work but k9s_logs_test_* work
+-- Create basic template with setting.
 ```
 PUT _template/k9s_logs_test
 {
