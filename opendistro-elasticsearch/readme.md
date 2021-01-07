@@ -20,3 +20,7 @@ ERR: Timed out while waiting for a green or yellow cluster state.
    * If this is not working, try running securityadmin.sh with --diagnose and see diagnose trace log file)
    * Add --accept-red-cluster to allow securityadmin to operate on a red cluster.
    ```
+Diagnose
+```
+bash securityadmin.sh -cd ../securityconfig -icl -nhnv -cacert /etc/elasticsearch/root-ca.pem -cert /etc/elasticsearch/kirk.pem -key /etc/elasticsearch/kirk-key.pem  --diagnose
+```
