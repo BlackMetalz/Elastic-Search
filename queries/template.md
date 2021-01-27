@@ -1,7 +1,7 @@
 -- Create new template basic:
 
 ```
-UT _index_template/k8s_logs
+PUT _index_template/k8s_logs
 {
   "index_patterns": ["k8s_logs_*"],
   "template": {
