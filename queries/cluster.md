@@ -2,3 +2,8 @@
 ```
 GET /_cluster/stats
 ```
+
+-- Get clused indices:
+```
+GET _cluster/state/blocks?pretty
+```
