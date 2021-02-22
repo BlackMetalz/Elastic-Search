@@ -10,7 +10,7 @@ Answer: No, if you only load the config.yml instead of the entire /securityconfi
 Question: Can i export the settings i did to the .yml files?
 
 Answer: 
-
+https://opendistro.github.io/for-elasticsearch-docs/docs/security/configuration/security-admin/#backup-restore-and-migrate
 ```
 
 - Here is the script I use when I reboot my cluster that does not erase any of the users and roles
