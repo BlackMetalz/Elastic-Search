@@ -2,7 +2,7 @@ version: '3'
 
 services:
   fluentd-elasticsearch:
-    image: registry.admicro.vn/common/fluentd-es:v1.6
+    image: fluentd-es:v1.6
     volumes:
       - ./etc:/fluentd/etc
     logging:
