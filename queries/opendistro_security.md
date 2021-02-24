@@ -26,12 +26,6 @@ GET _opendistro/_security/api/roles/<role>
 GET _opendistro/_security/api/rolesmapping
 ```
 
-- Delete role mapping
-```
-DELETE _opendistro/_security/api/rolesmapping/<role>
-```
-
-
 # 2. Delete Section
 - Delete user:
 ```
