@@ -2,7 +2,8 @@
 
 
 ```
-FROM fluentd:v1.6-debian-1 # This may changes xD
+# The version may change.
+FROM fluentd:v1.6-debian-1 
 
 USER root
 
