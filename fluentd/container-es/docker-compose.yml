@@ -2,7 +2,7 @@ version: '3'
 
 services:
   fluentd-elasticsearch:
-    image: fluentd-es:v1.6
+    image: fluentd-es:latest
     volumes:
       - ./etc:/fluentd/etc
     logging:
