@@ -30,6 +30,3 @@ https://opendistro.github.io/for-elasticsearch-docs/docs/security/configuration/
 ./securityadmin.sh -backup /root/odfe/ -h HOST_IP -icl -nhnv -cacert /etc/elasticsearch/root-ca.pem -cert /etc/elasticsearch/kirk.pem -key /etc/elasticsearch/kirk-key.pem
 ```
 
-
-
-## Todo: export user,role and roles mapping to .yml file
