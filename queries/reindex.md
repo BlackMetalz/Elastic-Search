@@ -144,5 +144,12 @@ POST _reindex?wait_for_completion=false&slices=20&refresh
 -- Get reindex status and cancel the reindex: https://stackoverflow.com/questions/52410416/how-to-stop-reindexing-in-elasticsearch
 ```
 GET _tasks?detailed=true&actions=*reindex
-POST _tasks/_cancel?nodes=node_id_go_here&actions=*reindex
+example output:
+```
+      "tasks" : {
+        "56aFiZWgTca6isXCGwF8ew:10725" : {
+        ```
+So we used this for cancel specific task:
+```
+POST _tasks/56aFiZWgTca6isXCGwF8ew:10725/_cancel
 ```
