@@ -1,14 +1,12 @@
 -- Read: https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html
 - Create new index basic:
 ```
-PUT wtf_index_name
+PUT your_index_name
 {
-  "settings":
-  {
-    "index" : 
-    {
-      "number_of_shards": 5
-      "number_of_replicas" : 1
+  "settings": {
+    "index": {
+      "number_of_shards": 5,  
+      "number_of_replicas": 1 
     }
   }
 }
