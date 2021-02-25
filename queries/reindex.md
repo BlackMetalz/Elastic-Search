@@ -8,7 +8,7 @@ index: wtf_1 have 20k documents
 index: test_data have 100k documents
 
 ```
-POST _reindex 
+POST _reindex?wait_for_completion=false
 {
   "source": {
     "index": "wtf_1"
@@ -42,7 +42,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/reindex-upgrade-
 
 -- Reindex from remote cluster. I used this for reindex from ES 5 to ES 7 or ES 7 to ES 7
 ```
-POST _reindex
+POST _reindex?wait_for_completion=false
 {
   "source": {
     "remote": {
