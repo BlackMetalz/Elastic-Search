@@ -153,3 +153,11 @@ So we used this for cancel specific task:
 ```
 POST _tasks/56aFiZWgTca6isXCGwF8ew:10725/_cancel
 ```
+
+-- More explain for reindex task
+```
+    "start_time_in_millis" : 1614934768470,
+    "running_time_in_nanos" : 33417453267004,
+```
+- start_time_in_millis: Convert this to unix time. It is when you start reindex / task
+- running_time_in_nanos: Convert this to minute / hour. You will see total time task spend for this
