@@ -1,3 +1,17 @@
+-- cluster allocation filtering:
+The most common use case for cluster-level shard allocation filtering is when you want to decommission a node. 
+To move shards off of a node prior to shutting it down, you could create a filter that excludes the node by its IP address:
+
+```
+PUT _cluster/settings
+{
+  "transient" : {
+    "cluster.routing.allocation.exclude._ip" : "10.0.0.1"
+  }
+}
+
+```
+
 -- Get cluster stats. This can see total shard, mem, heap size
 ```
 GET /_cluster/stats
