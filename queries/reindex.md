@@ -41,6 +41,23 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/reindex-upgrade-
 
 
 -- Reindex from remote cluster. I used this for reindex from ES 5 to ES 7 or ES 7 to ES 7
+No auth:
+```
+POST _reindex?wait_for_completion=false
+{
+  "source": {
+    "remote": {
+      "host": "http://10.0.0.222:9200"
+    },
+    "index": "index-name-2021.01.20"
+  },
+  "dest": {
+    "index": "index-name-2021.01.20"
+  }
+}
+```
+
+
 ```
 POST _reindex?wait_for_completion=false
 {
