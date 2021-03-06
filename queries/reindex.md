@@ -94,6 +94,11 @@ for index in i1 i2 i3 i4 i5; do
 done
 ```
 
+-- Increase reindex speed
+```
+Create an index with the appropriate mappings and settings. Set the refresh_interval to -1 and set number_of_replicas to 0 for faster reindexing.
+```
+
 -- Reindex with auto slice: This doesn't work with reindex from remote
 https://discuss.elastic.co/t/slow-reindex-operation-on-heavy-index/198320/3
 From author:
