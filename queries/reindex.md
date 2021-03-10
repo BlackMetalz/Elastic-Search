@@ -82,7 +82,7 @@ reindex.remote.whitelist : oldhost:9200
 into elasticsearch.yml ( master node only and restart )
 
 
-- CURL command for large data
+- CURL command if you don't use kibana
 ```
 curl -XPOST \
     http://127.0.0.1:9200/_reindex \
@@ -114,6 +114,21 @@ done
 -- Increase reindex speed
 ```
 Create an index with the appropriate mappings and settings. Set the refresh_interval to -1 and set number_of_replicas to 0 for faster reindexing.
+
+PUT /your_index_name/_settings
+{
+  "index" : {
+    "number_of_replicas" : 0
+  }
+}
+
+PUT /your_index_name/_settings
+{
+  "index" : {
+    "refresh_interval" : "-1"
+  }
+}
+
 ```
 
 -- Reindex with auto slice: This doesn't work with reindex from remote
