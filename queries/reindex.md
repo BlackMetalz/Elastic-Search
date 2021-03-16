@@ -157,7 +157,6 @@ Whether query or indexing performance dominates the runtime depends on the docum
 
 So number of slice should be equal to number of shard ( primary and replica )
 
-
 ```
 POST _reindex?wait_for_completion=false&slices=20&refresh
 {
@@ -177,6 +176,20 @@ POST _reindex?wait_for_completion=false&slices=20&refresh
   }
 }
 ```
+
+-- Or use slices=auto for easy xD
+```
+POST _reindex?wait_for_completion=false&slices=auto&refresh
+{
+  "source": {
+    "index": "indexname-06*"
+  },
+  "dest": {
+    "index": "indexname-06"
+  }
+}
+```
+
 
 -- Get reindex status and cancel the reindex: https://stackoverflow.com/questions/52410416/how-to-stop-reindexing-in-elasticsearch
 ```
