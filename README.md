@@ -48,4 +48,10 @@ Seed Hosts
 - If mostly used read,write -> leave more ram for filesystem cache
 - If mostly used for AAG query -> 40-50% Ram ( no more 32G )
 
+- Related to field
+More indexed fields = more data structures.
+More data structures = more random disk seeks.
+More random disk seeks = more time.
+
+
 
