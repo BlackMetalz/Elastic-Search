@@ -10,22 +10,17 @@ PUT _cluster/settings
 }
 ```
 
-# Step 2: Stop indexing and perform a synced flush
-```
-POST _flush/synced
-```
-
-# Step 3: Restart single node
+# Step 2: Restart single node
 ```
 service elasticsearch restart
 ```
 
-# Step 4: Check if node joined
+# Step 3: Check if node joined
 ```
 GET _cat/nodes
 ```
 
-# Step 5: Reenable shard allocation
+# Step 4: Reenable shard allocation
 ```
 PUT _cluster/settings
 {
@@ -35,9 +30,9 @@ PUT _cluster/settings
 }
 ```
 
-# Step 6: Wait till cluster green
+# Step 5: Wait till cluster green
 ```
 GET _cluster/health
 ```
 
-# Step 7: Repeat from step 1
+# Step 6: Repeat from step 1
