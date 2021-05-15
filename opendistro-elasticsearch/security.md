@@ -1,4 +1,11 @@
-## Source: https://discuss.opendistrocommunity.dev/t/users-gone-after-using-securityadmin-sh/1781/4
+# Ref: https://opendistro.github.io/for-elasticsearch-docs/docs/troubleshoot/security-admin/
+
+-- Some how your cluster is fucked by you and become in red status:
+```
+cd /usr/share/elasticsearch/plugins/opendistro_security/tools/ && bash securityadmin.sh -cd ../securityconfig -nhnv -cacert /etc/elasticsearch/root-ca.pem -cert /etc/elasticsearch/kirk.pem -key /etc/elasticsearch/kirk-key.pem -icl --accept-red-cluster
+```
+
+# Source: https://discuss.opendistrocommunity.dev/t/users-gone-after-using-securityadmin-sh/1781/4
 
 ```
 Question: So i will lose configuration from kibana when i use securityadmin.sh?
