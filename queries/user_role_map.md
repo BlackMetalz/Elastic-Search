@@ -40,7 +40,7 @@ PUT _opendistro/_security/api/roles/userrole
 PUT _opendistro/_security/api/rolesmapping/userrole
 {
   "backend_roles" : [ "userrole" ],
-  "hosts" : [ "*" ],
+  "hosts" : [ "" ],
   "users" : [ "username" ]
 }
 ```
