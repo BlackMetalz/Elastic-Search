@@ -20,3 +20,13 @@ curl -XPUT “http://@host:9200/_cluster/settings” -d
    }
 }'
 ```
+
+-- Check progress tip:
+You still can see relocating shard in cluster health status. 
+And check how much shard left for allocating:
+doing in curl command:
+```
+curl -s "eshost:esport/_cat/shards" | grep node_ip_here | wc -l
+```
+
+You can see total shard left for relocation. Once no shard in node you want to remove. It is done!
