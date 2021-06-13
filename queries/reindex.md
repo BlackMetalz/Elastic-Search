@@ -111,21 +111,22 @@ for index in i1 i2 i3 i4 i5; do
 done
 ```
 
--- Increase reindex speed
+-- Increase reindex speed:
+# https://aws.amazon.com/premiumsupport/knowledge-center/elasticsearch-indexing-performance/
+# https://developers.soundcloud.com/blog/how-to-reindex-1-billion-documents-in-1-hour-at-soundcloud
 ```
 Create an index with the appropriate mappings and settings. Set the refresh_interval to -1 and set number_of_replicas to 0 for faster reindexing.
 
-PUT /your_index_name/_settings
+PUT index_name/_settings
 {
-  "index" : {
-    "number_of_replicas" : 0
-  }
-}
-
-PUT /your_index_name/_settings
-{
-  "index" : {
-    "refresh_interval" : "-1"
+  "settings": {
+    "index": {
+      "number_of_replicas": 0,
+      "refresh_interval": "-1"
+    },
+    "translog": {
+      "flush_threshold_size": "2gb"
+    }
   }
 }
 
